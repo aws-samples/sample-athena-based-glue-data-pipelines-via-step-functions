@@ -1,0 +1,24 @@
+cdk.context.json
+.idea
+.DS_Store
+cdk.out
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+.idea/
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+/cdk/node_modules/
+/docs/*.bkp
+src/commons/execute_athena_query/exec_athena_query.py.zip
+src/commons/execute_athena_query/execute_batch_ddl_athena_j2sql.py.zip
+deployment_tools/post_cdk/stage
+/py3.9.10/
+/src/commons/execute_athena_query/sample.py
+.ds_Store
