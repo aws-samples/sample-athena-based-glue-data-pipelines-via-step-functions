@@ -1,0 +1,75 @@
+{
+  "render_params": {
+    "join_config": [
+      {
+        "conditions": [
+          {
+            "key": "a.plant_id_eia=b.plant_id_eia"
+          },
+          {
+            "key": "a.emissions_unit_id_epa=b.emissions_unit_id_epa"
+          },
+          {
+            "key": "a.operating_datetime_utc=b.operating_datetime_utc"
+          }
+        ],
+        "table_alias": "b",
+        "table_name": "utility_data_in",
+        "type": "inner join"
+      }
+    ],
+    "param_audited_attribute": "",
+    "select_config": [
+      {
+        "column_alias": "grain_key_1",
+        "column_type": "value",
+        "column_value": "plant_id_eia"
+      },
+      {
+        "column_alias": "grain_value_1",
+        "column_type": "formula",
+        "column_value": "cast(b.plant_id_eia as varchar)"
+      },
+      {
+        "column_alias": "grain_key_2",
+        "column_type": "value",
+        "column_value": "emissions_unit_id_epa"
+      },
+      {
+        "column_alias": "grain_value_2",
+        "column_type": "formula",
+        "column_value": "cast(b.emissions_unit_id_epa as varchar)"
+      },
+      {
+        "column_alias": "grain_key_3",
+        "column_type": "value",
+        "column_value": "operating_datetime_utc"
+      },
+      {
+        "column_alias": "grain_value_3",
+        "column_type": "formula",
+        "column_value": "cast(b.operating_datetime_utc as varchar)"
+      },
+      {
+        "column_alias": "grain_key_4",
+        "column_type": "formula",
+        "column_value": "cast(NULL as varchar)"
+      },
+      {
+        "column_alias": "grain_value_4",
+        "column_type": "formula",
+        "column_value": "cast(NULL as varchar)"
+      },
+      {
+        "column_alias": "grain_key_5",
+        "column_type": "formula",
+        "column_value": "cast(NULL as varchar)"
+      },
+      {
+        "column_alias": "grain_value_5",
+        "column_type": "formula",
+        "column_value": "cast(NULL as varchar)"
+      }
+    ]
+  }
+}

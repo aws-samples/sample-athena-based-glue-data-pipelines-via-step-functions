@@ -1,0 +1,56 @@
+{% macro select_grain_cols(select_config, table_alias) -%}
+{#
+    Apply dynamic templating based on params
+        - Select columns based on render_params['table_metadata']
+    :param table_metadata: JSON style table configuration
+    :type table_metadata: List(Dict)
+    :param table_alias: Table alias to be substituted in SQL
+    :type table_alias: List
+
+    NOTE: No type casting is performed here
+#}
+    {%- for col in select_config %}
+        {%- if table_alias == [""] %}
+            {%- if col['column_type'] == 'value' -%}
+                '{{ col['column_value'] }}' as {{ col['column_alias'] }}
+                {%- if not loop.last %}, {% endif -%}
+            {%- elif col['column_type'] == 'formula' -%}
+                {{ col['column_value'] }} as {{ col['column_alias'] }}
+                {%- if not loop.last %}, {% endif -%}
+            {%- endif %}
+        {%- else -%}
+            {#
+                CAUTION : Alias is applied only for col['column_type'] == 'formula'
+                          where the assumption is col['column_value'] is a single column name
+            #}
+            {%- if col['column_type'] == 'value' -%}
+                {{ table_alias[0] }}.'{{ col['column_value'] }}' as {{ col['column_alias'] }}
+                {%- if not loop.last %}, {% endif -%}
+            {%- elif col['column_type'] == 'formula' -%}
+                {{ col['column_value'] }} as {{ col['column_alias'] }}
+                {%- if not loop.last %}, {% endif -%}
+            {%- endif %}
+        {%- endif %}
+    {% endfor -%}
+{% endmacro -%}
+
+
+{% macro add_join(join_config) -%}
+{#
+    Apply dynamic templating based on params
+        - Adds join condition based on render_params['join_config']
+    :param join_config: JSON style join configuration
+    :type join_config: List(Dict)
+
+    # CAUTION : JOIN TABLES HAS TO BE IN THE SAME DATABASE
+  #}
+    {%- for join in join_config -%}
+        {{ join['type'] }}
+        {{ join['table_name'] }} {{ join['table_alias'] }}
+        on
+        {%- for condition in join['conditions'] %}
+            {{ condition['key'] }}
+            {%- if not loop.last %} and {% endif -%}
+        {% endfor %}
+    {% endfor -%}
+{% endmacro -%}
