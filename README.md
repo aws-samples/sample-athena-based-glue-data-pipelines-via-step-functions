@@ -1,4 +1,4 @@
-# datalake-athena-with-audit-pipeline-pattern
+# sample-athena-based-glue-data-pipelines-via-step-functions
 <h2>Purpose</h2>
 <p>The pattern presented here provides steps on how to build serverless ETL data pipelines with dependencies among them. Serverless constructs used are Amazon S3, AWS Glue, Amazon Athena to process data, AWS Lambda, AWS Step Function, and the AWS Cloud Development Kit (CDK) to automate and orchestrate the framework. Data pipelines are triggered when one more S3 file arrives. On data pipeline completion, dependencies can be set up for the subsequent pipelines. This framework has the ability to impose a configuration-driven approach to automate data lake storage constructs like Glue database & Glue table creation on S3.</p>
 <p>This pattern will be pipeline-agnostic, so it’s easy to add new pipelines by following the principles outlined in the pattern.</p>
