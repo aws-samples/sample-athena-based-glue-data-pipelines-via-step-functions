@@ -1,0 +1,24 @@
+{
+  "registered_incoming_files": [
+    {
+      "partitioned": "true",
+      "prefixes": "epacems-1996-IN",
+      "table_name": "utility_data_in"
+    },
+    {
+      "partitioned": "true",
+      "prefixes": "epacems-1996-OH",
+      "table_name": "utility_data_oh"
+    },
+    {
+      "partitioned": "",
+      "prefixes": "state_emission_daily.done",
+      "table_name": ""
+    },
+    {
+      "partitioned": "",
+      "prefixes": "state_emission_daily.completed",
+      "table_name": ""
+    }
+  ]
+}

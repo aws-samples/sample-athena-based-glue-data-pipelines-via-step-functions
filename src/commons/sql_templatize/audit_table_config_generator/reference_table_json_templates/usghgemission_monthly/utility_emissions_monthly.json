@@ -1,0 +1,69 @@
+{
+  "render_params": {
+    "join_config": [
+      {
+        "conditions": [
+          {
+            "key": "a.record_month=b.record_month"
+          }
+        ],
+        "table_alias": "b",
+        "table_name": "utility_emissions_monthly",
+        "type": "inner join"
+      }
+    ],
+    "param_audited_attribute": "",
+    "select_config": [
+      {
+        "column_alias": "grain_key_1",
+        "column_type": "value",
+        "column_value": "record_month"
+      },
+      {
+        "column_alias": "grain_value_1",
+        "column_type": "formula",
+        "column_value": "cast(b.record_month as varchar)"
+      },
+      {
+        "column_alias": "grain_key_2",
+        "column_type": "formula",
+        "column_value": "cast(NULL as varchar)"
+      },
+      {
+        "column_alias": "grain_value_2",
+        "column_type": "formula",
+        "column_value": "cast(NULL as varchar)"
+      },
+      {
+        "column_alias": "grain_key_3",
+        "column_type": "formula",
+        "column_value": "cast(NULL as varchar)"
+      },
+      {
+        "column_alias": "grain_value_3",
+        "column_type": "formula",
+        "column_value": "cast(NULL as varchar)"
+      },
+      {
+        "column_alias": "grain_key_4",
+        "column_type": "formula",
+        "column_value": "cast(NULL as varchar)"
+      },
+      {
+        "column_alias": "grain_value_4",
+        "column_type": "formula",
+        "column_value": "cast(NULL as varchar)"
+      },
+      {
+        "column_alias": "grain_key_5",
+        "column_type": "formula",
+        "column_value": "cast(NULL as varchar)"
+      },
+      {
+        "column_alias": "grain_value_5",
+        "column_type": "formula",
+        "column_value": "cast(NULL as varchar)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "table_level_filter": [],
+  "table_select_period_pattern": {
+    "pattern_1": [
+      "utility_emissions_monthly"
+    ],
+    "pattern_2": ["utility_data_in",
+    "utility_data_oh"
+    ],
+    "pattern_3": [],
+    "pattern_4": []
+  }
+}

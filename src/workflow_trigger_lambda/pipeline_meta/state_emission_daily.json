@@ -1,0 +1,14 @@
+{
+  "registered_incoming_files": [
+    {
+      "partitioned": "true",
+      "prefixes": "epacems-1996-IN",
+      "table_name": "utility_data_in"
+    },
+    {
+      "partitioned": "true",
+      "prefixes": "epacems-1996-OH",
+      "table_name": "utility_data_oh"
+    }
+  ]
+}
